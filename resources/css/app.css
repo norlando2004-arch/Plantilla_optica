@@ -1,0 +1,67 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* === Ajustes responsive para ilustraciones decorativas === */
+
+/* Asegurar que nunca desborden horizontalmente */
+.kids-nav-mascot,
+.kids-intro-stat-dog,
+.kids-intro-card-castor,
+.kids-intro-card-capibara,
+.kids-hero-castor-bottom,
+.kids-hero-capi-bottom,
+#landingIntroImage {
+    max-width: 100%;
+}
+
+/* Imagen principal del hero: recortar suavemente en pantallas estrechas */
+#landingIntroImage {
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    /* Mascotas de la navbar: un poco más pequeñas en móvil */
+    .kids-nav-mascot {
+        transform: scale(0.75);
+        transform-origin: center bottom;
+    }
+
+    /* Perro en stat "Asesoría" */
+    .kids-intro-stat-dog {
+        transform: scale(0.7);
+        transform-origin: bottom right;
+    }
+
+    /* Castor y capibara sobre las cards principales */
+    .kids-intro-card-castor {
+        transform: translateX(-50%) scale(0.7) !important;
+        transform-origin: bottom center;
+    }
+
+    .kids-intro-card-capibara {
+        transform: scale(0.7) !important;
+        transform-origin: bottom left;
+    }
+
+    /* Ilustraciones grandes de los bordes inferiores del hero */
+    .kids-hero-castor-bottom {
+        height: 8rem !important;
+        transform: translate(6%, 6%) scale(0.7) !important;
+        transform-origin: bottom right;
+    }
+
+    .kids-hero-capi-bottom {
+        height: 10rem !important;
+        transform: translate(-6%, 6%) scale(0.7) !important;
+        transform-origin: bottom left;
+    }
+}

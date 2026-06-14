@@ -1,0 +1,87 @@
+[17:25:41] Conectando a la base de datos ANTIGUA...
+[17:25:42] ✔  Conectado.
+[17:25:42] Schema detectado en DB antigua: optica
+[17:25:43] Tablas encontradas en DB antigua: bloques_contenido, bloques_contenido_archivos, cache, candados_cache, carritos, favoritos, formulas, gafa_lens_prices, gafa_prescriptions, items_carrito, lotes_trabajos, mensajes_contacto, migrations, pagos, perfiles_clientes, precios_formulas, preguntas_frecuentes, producto_views, productos, promocion_producto, promociones, resenas, roles, sesiones, suscripciones_boletin, tokens_restablecer_contrasena, trabajos, trabajos_fallidos, ubicaciones, usuarios
+[17:25:43]   → bloques_contenido: 7 filas exportadas
+[17:25:46]   → bloques_contenido_archivos: 11 filas exportadas
+[17:25:46]   → Saltando cache (tabla transitoria)
+[17:25:46]   → candados_cache: 0 filas exportadas
+[17:25:46]   → carritos: 6 filas exportadas
+[17:25:46]   → favoritos: 0 filas exportadas
+[17:25:47]   → formulas: 0 filas exportadas
+[17:25:47]   → gafa_lens_prices: 0 filas exportadas
+[17:25:47]   → gafa_prescriptions: 0 filas exportadas
+[17:25:47]   → items_carrito: 6 filas exportadas
+[17:25:48]   → lotes_trabajos: 0 filas exportadas
+[17:25:48]   → mensajes_contacto: 0 filas exportadas
+[17:25:48]   → Saltando migrations (tabla transitoria)
+[17:25:48]   → pagos: 6 filas exportadas
+[17:25:48]   → perfiles_clientes: 2 filas exportadas
+[17:25:49]   → precios_formulas: 0 filas exportadas
+[17:25:49]   → preguntas_frecuentes: 0 filas exportadas
+[17:25:49]   → producto_views: 2 filas exportadas
+[17:25:49]   → productos: 1 filas exportadas
+[17:25:50]   → promocion_producto: 0 filas exportadas
+[17:25:50]   → promociones: 1 filas exportadas
+[17:25:50]   → resenas: 0 filas exportadas
+[17:25:50]   → roles: 1 filas exportadas
+[17:25:50]   → Saltando sesiones (tabla transitoria)
+[17:25:51]   → suscripciones_boletin: 0 filas exportadas
+[17:25:51]   → tokens_restablecer_contrasena: 0 filas exportadas
+[17:25:51]   → trabajos: 0 filas exportadas
+[17:25:52]   → trabajos_fallidos: 0 filas exportadas
+[17:25:52]   → ubicaciones: 0 filas exportadas
+[17:25:52]   → usuarios: 2 filas exportadas
+[17:25:52] Exportación completada.
+[17:25:52] 
+[17:25:52] Conectando a la base de datos NUEVA...
+[17:25:53] ✔  Conectado.
+[17:25:53] Orden de inserción (topo): bloques_contenido → bloques_contenido_archivos → candados_cache → roles → usuarios → carritos → favoritos → formulas → gafa_lens_prices → gafa_prescriptions → productos → items_carrito → lotes_trabajos → mensajes_contacto → pagos → perfiles_clientes → precios_formulas → preguntas_frecuentes → producto_views → promociones → promocion_producto → resenas → suscripciones_boletin → tokens_restablecer_contrasena → trabajos → trabajos_fallidos → ubicaciones
+[17:25:53] 
+[17:25:53] Truncando tablas (hijos primero)...
+[17:25:53]   ✔ promociones truncado
+[17:25:54]   ✔ producto_views truncado
+[17:25:54]   ✔ perfiles_clientes truncado
+[17:25:54]   ✔ pagos truncado
+[17:25:54]   ✔ items_carrito truncado
+[17:25:54]   ✔ productos truncado
+[17:25:54]   ✔ carritos truncado
+[17:25:54]   ✔ usuarios truncado
+[17:25:54]   ✔ roles truncado
+[17:25:54]   ✔ bloques_contenido_archivos truncado
+[17:25:55]   ✔ bloques_contenido truncado
+[17:25:55] 
+[17:25:55] Insertando datos...
+[17:25:56]   ✔ bloques_contenido: 7 filas insertadas.
+[17:26:03]   ✔ bloques_contenido_archivos: 11 filas insertadas.
+[17:26:03]   → candados_cache: vacía, omitida.
+[17:26:04]   ✔ roles: 1 filas insertadas.
+[17:26:04]   ✔ usuarios: 2 filas insertadas.
+[17:26:06]   ✔ carritos: 6 filas insertadas.
+[17:26:06]   → favoritos: vacía, omitida.
+[17:26:06]   → formulas: vacía, omitida.
+[17:26:06]   → gafa_lens_prices: vacía, omitida.
+[17:26:06]   → gafa_prescriptions: vacía, omitida.
+[17:26:07]   ✗  Error en fila de productos: SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type boolean: ""
+CONTEXT:  unnamed portal parameter $16 = ''
+[17:26:08]   ✗  Error en fila de items_carrito: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  insert or update on table "items_carrito" violates foreign key constraint "items_carrito_producto_id_foreign"
+DETAIL:  Key (producto_id)=(1) is not present in table "productos".
+[17:26:08]   → lotes_trabajos: vacía, omitida.
+[17:26:08]   → mensajes_contacto: vacía, omitida.
+[17:26:09]   ✔ pagos: 6 filas insertadas.
+[17:26:10]   ✔ perfiles_clientes: 2 filas insertadas.
+[17:26:10]   → precios_formulas: vacía, omitida.
+[17:26:10]   → preguntas_frecuentes: vacía, omitida.
+[17:26:11]   ✗  Error en fila de producto_views: SQLSTATE[23503]: Foreign key violation: 7 ERROR:  insert or update on table "producto_views" violates foreign key constraint "producto_views_producto_id_foreign"
+DETAIL:  Key (producto_id)=(1) is not present in table "productos".
+[17:26:12]   ✔ promociones: 1 filas insertadas.
+[17:26:12]   → promocion_producto: vacía, omitida.
+[17:26:12]   → resenas: vacía, omitida.
+[17:26:12]   → suscripciones_boletin: vacía, omitida.
+[17:26:12]   → tokens_restablecer_contrasena: vacía, omitida.
+[17:26:12]   → trabajos: vacía, omitida.
+[17:26:12]   → trabajos_fallidos: vacía, omitida.
+[17:26:12]   → ubicaciones: vacía, omitida.
+[17:26:12] 
+[17:26:12] ⚠  Tablas con errores: productos, items_carrito, producto_views
+[17:26:12] Listo. Borra este archivo (contiene credenciales).

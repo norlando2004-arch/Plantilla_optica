@@ -1,0 +1,29 @@
+<?php
+
+namespace Tests\Feature;
+
+use App\Models\Producto;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
+
+class GafasMujeresRedirectTest extends TestCase
+{
+    use RefreshDatabase;
+
+    public function test_gafas_mujeres_redirects_to_gafas_with_mujeres_filter_defaults(): void
+    {
+        Producto::query()->create([
+            'nombre' => 'Montura mujer',
+            'slug' => 'montura-mujer',
+            'tipo' => 'gafas',
+            'genero_objetivo' => 'female',
+            'precio' => 62000,
+            'precio_oferta' => null,
+            'esta_activo' => true,
+        ]);
+
+        $response = $this->get('/gafas-mujeres');
+
+        $response->assertRedirect('/gafas?min_price=0&max_price=62000&categories%5B0%5D=mujeres');
+    }
+}
